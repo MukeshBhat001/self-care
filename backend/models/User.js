@@ -39,33 +39,6 @@ const userSchema = new mongoose.Schema({
   timestamps: true
 });
 
-// Pre-save middleware to hash password
-userSchema.pre('save', async function(next) {
-    try {
-        if (!this.isModified('password')) {
-            return next();
-        }
-        console.log('Hashing password in pre-save hook');
-        const salt = await bcrypt.genSalt(10);
-        this.password = await bcrypt.hash(this.password, salt);
-        console.log('Password hashed successfully');
-        next();
-    } catch (error) {
-        next(error);
-    }
-});
-
-// Method to compare password
-userSchema.methods.comparePassword = async function(candidatePassword) {
-    try {
-        console.log('Comparing passwords');
-        const isMatch = await bcrypt.compare(candidatePassword, this.password);
-        console.log('Password comparison result:', isMatch);
-        return isMatch;
-    } catch (error) {
-        throw error;
-    }
-};
 
 const User = mongoose.model('User', userSchema);
 
