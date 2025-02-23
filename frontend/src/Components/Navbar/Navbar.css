@@ -1,0 +1,110 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.navbar-logo img{
+    width: 100px;
+    cursor: pointer;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.navbar-links li a:hover {
+    color: #f39c12;
+}
+
+.navbar-username {
+    color: #666;
+    margin-right: 1rem;
+}
+
+.navbar-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.navbar-profile:hover {
+    background-color: #f5f5f5;
+}
+
+.profile-icon {
+    font-size: 1.5rem;
+    color: cornflowerblue;
+}
+
+.profile-name {
+    font-size: 1rem;
+    color: #333;
+}
+
+.navbar-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.navbar-button:first-of-type {
+    background-color: transparent;
+    color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+}
+
+.navbar-button:last-of-type {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+.navbar-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-button:first-of-type:hover {
+    background-color: rgba(76, 175, 80, 0.1);
+}
+
+.navbar-button:last-of-type:hover {
+    background-color: cornflowerblue;
+}
+
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .profile-name {
+        display: none;
+    }
+    
+    .navbar-profile {
+        padding: 0.25rem;
+    }
+    
+    .navbar {
+        padding: 1rem;
+    }
+}
